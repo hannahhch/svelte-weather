@@ -1,5 +1,1 @@
-<script>
-  export let location;
-</script>
-
-<h1>{location = ""} Weather</h1>
+<h1> Weather App</h1>

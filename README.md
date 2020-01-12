@@ -1,6 +1,6 @@
 ## Svelte Weather App 
 
-This is a very simple weather app utilizing geolocation and the open weather API. The purpose of this app is to learn (Svelte)[https://svelte.dev/]. 
+This is a very simple weather app utilizing geolocation and the open weather API. The purpose of this app is to learn [Svelte](https://svelte.dev/). 
 
 Current Todo Items
 - Add a loading animation (look into Svelte animation library)

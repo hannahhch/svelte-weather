@@ -4,7 +4,7 @@
   export let temp = 0;
 </script>
 
-<div>The current weather is {weather}</div>
+<div>The current weather is {weather.toLowerCase()}</div>
 <div>The humidity is {humidity}%</div>
 <div>The current temperature is {Math.floor(temp)}°F.</div>
 

@@ -17,10 +17,8 @@
       const res = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=ab1fcdbee534c8cfce19f3c1ff919a6d&units=imperial`
       );
-
       weatherData = await res.json();
       weatherData.weather = weatherData.weather[0].main;
-
     } catch(err) {
       console.error(err)
     }
@@ -31,6 +29,8 @@
         navigator.geolocation.getCurrentPosition(position => {
         latitude = position.coords.latitude;
         longitude = position.coords.longitude
+
+        console.log(position)
         getWeatherData();
       })
     } else {

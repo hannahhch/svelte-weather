@@ -17,6 +17,9 @@
   },
   "dependencies": {
     "http-server": "^0.12.1",
-    "sirv-cli": "^0.4.4"
+    "node-sass": "^4.13.1",
+    "sas": "^3.0.4",
+    "sirv-cli": "^0.4.4",
+    "svelte-preprocess": "^3.3.0"
   }
 }

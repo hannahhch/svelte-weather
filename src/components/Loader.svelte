@@ -3,8 +3,6 @@
   <div class="bolt"></div>
 </div>
 
-<p>Loading...</p>
-
 <style type="text/scss">
   $white: #fff;
   $blue: #0984e3;
@@ -15,8 +13,10 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    margin-top: 100px;
-    animation: slide 50s linear;
+    animation-name: slide;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+    width: 100%;
   }
 
   .bolt {

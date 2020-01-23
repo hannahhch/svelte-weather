@@ -8,7 +8,11 @@
 
 <style>
 	main {
+		display: flex;
+		align-content: center;
+		flex-direction: column;
+		justify-content: center;
 		text-align: center;
-		margin: 0 auto;
+		height: 100%;
 	}
 </style>

@@ -3,7 +3,7 @@
   export let max = 5;
 </script>
 
-<div>The fishing rating is a 
+<div>The fishing action rating is a 
 {#if solunar.action == max}
 	<b>{solunar.action}/{max} !!</b>
 {:else if solunar.action == (max-1)}

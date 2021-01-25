@@ -11,7 +11,7 @@
   let solunarData = {};
   let latitude = 0;
   let longitude = 0;
-  let defaultDate = new Date(); // Date('Jan 24 2020 14:00') for 5/5 action
+  let selected_date = new Date(); // Date('Jan 24 2020 14:00') for 5/5 action
 
   // $: console.log('solunarData: '+JSON.stringify(solunarData)); // Log message anytime solunarData changes
   // $: console.log('weatherData: '+JSON.stringify(weatherData)); // Log message anytime weatherData changes
@@ -42,7 +42,7 @@
 
   const getSolunarData = async () => {
     try {
-      solunarData = getTimes(defaultDate,`${latitude}`,`${longitude}`);
+      solunarData = getTimes(selected_date,`${latitude}`,`${longitude}`);
     } catch(err) {
       console.error(err)
     }
@@ -65,9 +65,25 @@
 
 
 {#if weatherData.weather}
-  <Title location={weatherData.name} date={defaultDate} latitude={latitude} longitude={longitude}/>
-  <Weather weather={weatherData.weather_description} humidity={weatherData.main.humidity} temp={weatherData.main.temp} pressure={weatherData.main.pressure} feels_like={weatherData.main.feels_like} wind_speed={weatherData.wind.speed} wind_direction={weatherData.wind.direction}/>
+  <Title location={weatherData.name} date={selected_date} latitude={latitude} longitude={longitude}/>
+  <div>
+    <i>Showing conditions for</i><br/>
+    {selected_date}<br/>
+    Location: {latitude},{longitude}<br/>
+  </div>
+  <spacer> </spacer>
   <Solunar solunar={solunarData}/>
+  <spacer> </spacer>
+  <Weather weather={weatherData.weather_description} humidity={weatherData.main.humidity} temp={weatherData.main.temp} pressure={weatherData.main.pressure} feels_like={weatherData.main.feels_like} wind_speed={weatherData.wind.speed} wind_direction={weatherData.wind.direction}/>
 {:else}
   <Loader/>
 {/if}
+
+<style>
+  div {
+    font-size: 25px;
+  }
+  spacer {
+    padding-bottom: 25px;
+  }
+</style>
